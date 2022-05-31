@@ -167,22 +167,24 @@ export default function Form() {
           )}
         </div>
 
-        <div className="mb-4">
+        {/* this is for test */}
+
+        <div className="mb-12 relative ">
           <label className="font-bold text-xl">Category:</label>
           <p className="text-sm text-gray-700">
             Adding a category will help make your item discoverable on OpenSea.
           </p>
-          <select
-            className="border border-green-600 rounded p-2"
-            {...register("Category")}
-          >
-            <option value="Art">Art</option>
-            <option value="Music">Music</option>
-            <option value="Photography">Photography</option>
-            <option value="Sports">Sports</option>
-            <option value="Utility">Utility</option>
-          </select>
+          <div className="box">
+            <select {...register("Category")}>
+              <option value="Art">Art</option>
+              <option value="Music">Music</option>
+              <option value="Photography">Photography</option>
+              <option value="Sports">Sports</option>
+              <option value="Utility">Utility</option>
+            </select>
+          </div>
         </div>
+     
 
         <br />
         <div className="mb-4">
@@ -232,21 +234,22 @@ export default function Form() {
 
         <div className="mb-4">
           <p className="font-bold text-xl">Create earnings</p>
-        </div>
-        <p className="text-sm text-gray-700">
-          Collect a fee when a user re-sells an item you originally created.
-          This is deducted from the final sale price and paid monthly to a
-          payout address of your choosing.
-        </p>
-        <a className="text-sm text-blue-600">
-          Learn more about creator earnings.
-        </a>
-        <p className="text-sm text-gray-700"> Percentage fee</p>
-        <input
+
+          <p className="text-sm text-gray-700">
+            Collect a fee when a user re-sells an item you originally created.
+            This is deducted from the final sale price and paid monthly to a
+            payout address of your choosing.
+          </p>
+          <a className="text-sm text-blue-600">
+            Learn more about creator earnings.
+          </a>
+          <p className="text-sm text-gray-700"> Percentage fee</p>
+          <input
             className=" w-full p-3 outline-1 outline-red-500 border border-green-900 rounded"
             placeholder="e.g. 2.5"
             {...register("fee")}
           />
+        </div>
         <div className="mb-4">
           <p className="font-bold text-xl">BlockChain</p>
           <p className="text-sm text-gray-700">
@@ -257,11 +260,12 @@ export default function Form() {
             className="border border-green-600 rounded p-2"
             {...register("Category")}
           >
-            <option value="Art">Polygon</option>
+            <option value="Art">
+              <p className="p-3">Solana</p>
+            </option>
             <option value="Music">Ethereum</option>
             <option value="Photography">Klaytn</option>
             <option value="Sports">Solana</option>
-         
           </select>
         </div>
         <div className="mb-4">
@@ -290,21 +294,6 @@ export default function Form() {
           />
         </div>
       </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   );
 }
