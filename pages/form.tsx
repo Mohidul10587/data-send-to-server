@@ -6,6 +6,10 @@ import { FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import { AiOutlineInstagram, AiOutlineMedium } from "react-icons/ai";
 
+
+import Select from './select'
+
+
 type Inputs = {
   Name: string;
   URL: string;
@@ -18,6 +22,7 @@ type Inputs = {
   mediumLink: string;
   telegramLink: string;
   fee: string;
+  crypto:number;
 };
 
 export default function Form() {
@@ -73,6 +78,7 @@ export default function Form() {
 
   return (
     <div className="ml-10 mt-10 p-10 border ">
+
       <h1 className="text-5xl mb-4">Create My Collection</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
@@ -167,24 +173,25 @@ export default function Form() {
           )}
         </div>
 
-        {/* this is for test */}
 
-        <div className="mb-12 relative ">
+
+
+
+        <div className="mb-4">
           <label className="font-bold text-xl">Category:</label>
           <p className="text-sm text-gray-700">
             Adding a category will help make your item discoverable on OpenSea.
           </p>
-          <div className="box">
-            <select {...register("Category")}>
-              <option value="Art">Art</option>
-              <option value="Music">Music</option>
-              <option value="Photography">Photography</option>
-              <option value="Sports">Sports</option>
-              <option value="Utility">Utility</option>
-            </select>
-          </div>
+         {/* this is for select items */}
+
+
+
+         <Select selectable={['Dhaka','Boorishly', 'Rajshahi','Khulna','Stylet','Gaibandha','Rondure']}
+         
+         {...register("Category")}
+         />
+
         </div>
-     
 
         <br />
         <div className="mb-4">
@@ -258,12 +265,10 @@ export default function Form() {
           </p>
           <select
             className="border border-green-600 rounded p-2"
-            {...register("Category")}
+            {...register("crypto")}
           >
-            <option value="Art">
-              <p className="p-3">Solana</p>
-            </option>
             <option value="Music">Ethereum</option>
+            <option value="Music">Polygon</option>
             <option value="Photography">Klaytn</option>
             <option value="Sports">Solana</option>
           </select>
@@ -293,7 +298,11 @@ export default function Form() {
             value="Delete Collection"
           />
         </div>
+
+
       </form>
+
+     
     </div>
   );
 }

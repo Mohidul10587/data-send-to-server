@@ -1,0 +1,47 @@
+.wrapper {
+    min-width: 100px;
+    width: 100px;
+    position: relative;
+  }
+  
+  .button {
+    width: 100%;
+  text-align: center;
+    border: solid;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  
+  .content {
+    width: 100%;
+    top: 40px;
+    left: 0px;
+    position: absolute;
+    border: solid 2px;
+    border-radius: 15px;
+    padding: 5px;
+    max-height: 300px;
+    overflow: overlay;
+    background-color: rgb(92, 92, 204);
+    
+  }
+  
+  .content >*{
+    
+      text-align: center;
+      padding: 5px 0;
+      cursor: pointer;
+      color: white;
+  }
+  .content >*:hover{
+    background-color: blue;
+
+  }
+  
+  .content :last-child{
+      border-bottom: none;
+  }
+  
+  .content::-webkit-scrollbar{
+  display: none;
+  }
